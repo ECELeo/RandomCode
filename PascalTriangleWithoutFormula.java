@@ -2,7 +2,7 @@ package demoPackage;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class mainClass {
+public class PascalTriangleWithoutFormula {
 
 	public static void main(String[] args) {
 		
@@ -12,7 +12,7 @@ public class mainClass {
 		previousOutput.add(0);
 		int limit = 10;
 		for (int x = 1; x <= limit; x++) {
-			forSpacingPurposeOnly(limit,x);
+			addSpace(limit,x);
 			currentOutput = new ArrayList<Integer>();
 			for (int y = 0; y < x; y++) {
 				if(y == 0) {
@@ -31,7 +31,7 @@ public class mainClass {
 		}
 	}
 	
-	public static void forSpacingPurposeOnly(int limit, int decreaseSpace) {
+	public static void addSpace(int limit, int decreaseSpace) {
 		for (int y = 0; y <= limit - decreaseSpace; y++) {
 			System.out.print(" ");
 		}
