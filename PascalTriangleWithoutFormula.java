@@ -9,8 +9,9 @@ public class PascalTriangleWithoutFormula {
 		ArrayList<Integer> arrPrev = new ArrayList<Integer>();
 		ArrayList<Integer> arrCurr = new ArrayList<Integer>();
 		
-		arrPrev.add(0);
 		int limit = 10;
+		arrPrev.add(0);	
+		
 		for (int x = 1; x <= limit; x++) {
 			addSpace(limit,x);
 			arrCurr = new ArrayList<Integer>();
