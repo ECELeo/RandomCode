@@ -1,4 +1,4 @@
-package demoPackage;
+package demo;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -6,33 +6,33 @@ public class PascalTriangleWithoutFormula {
 
 	public static void main(String[] args) {
 		
-		ArrayList<Integer> previousOutput = new ArrayList<Integer>();
-		ArrayList<Integer> currentOutput = new ArrayList<Integer>();
+		ArrayList<Integer> arrPrev = new ArrayList<Integer>();
+		ArrayList<Integer> arrCurr = new ArrayList<Integer>();
 		
-		previousOutput.add(0);
+		arrPrev.add(0);
 		int limit = 10;
 		for (int x = 1; x <= limit; x++) {
 			addSpace(limit,x);
-			currentOutput = new ArrayList<Integer>();
+			arrCurr = new ArrayList<Integer>();
 			for (int y = 0; y < x; y++) {
 				if(y == 0) {
-					currentOutput.add(1);
+					arrCurr.add(1);
 					System.out.print(" " + 1);
-				} else if (x - 1 == y) {
-					currentOutput.add(1);
+				} else if (y == x-1) {
+					arrCurr.add(1);
 					System.out.print(" " + 1);
 				} else {
-					currentOutput.add(previousOutput.get(y-1) + previousOutput.get(y));
-					System.out.print(" " + (previousOutput.get(y-1) + previousOutput.get(y)));
+					arrCurr.add(arrPrev.get(y-1) + arrPrev.get(y));
+					System.out.print(" " + (arrPrev.get(y-1) + arrPrev.get(y)));
 				}
 			}
-			previousOutput = currentOutput;
+			arrPrev = arrCurr;
 			System.out.print("\n");
 		}
 	}
 	
-	public static void addSpace(int limit, int decreaseSpace) {
-		for (int y = 0; y <= limit - decreaseSpace; y++) {
+	public static void addSpace(int intLimit, int intDec) {
+		for (int y = 0; y <= intLimit - intDec; y++) {
 			System.out.print(" ");
 		}
 	}
